@@ -22,6 +22,30 @@ export class AppComponent {
 
   suggestUserName() {
     const suggestedName = 'Superuser';
+
+    // it is not the best approach because
+    // setValue you use to set your whole form
+/*    this.form.setValue(
+      {
+        userData: {
+          username: suggestedName,
+          email: ''
+        },
+        secret: 'pet',
+        questionAnswer: '',
+        gender: 'male'
+      }
+    );*/
+
+    // patchValue you use to overwrite parts of the form
+    this.form.form.patchValue(
+      {
+        userData: {
+          username: suggestedName
+        }
+      }
+    );
+
   }
 
 /*  onSubmit(form: NgForm) {
