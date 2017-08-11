@@ -11,6 +11,8 @@ export class AppComponent {
   // It's is useful if you need to access the form early than submitted
   @ViewChild('f') form: NgForm;
 
+  defaultQuestion = 'pet';
+
   suggestUserName() {
     const suggestedName = 'Superuser';
   }
