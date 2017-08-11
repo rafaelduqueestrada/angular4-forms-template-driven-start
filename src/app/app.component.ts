@@ -69,5 +69,7 @@ export class AppComponent {
     this.user.secretQuestion = this.form.value.secret;
     this.user.answer = this.form.value.questionAswer;
     this.user.gender = this.form.value.gender;
+
+    this.form.reset();
   }
 }
