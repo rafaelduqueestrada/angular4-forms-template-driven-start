@@ -45,12 +45,29 @@
           </select>
         </div>
         <div class="form-group">
-            <textarea
-              name="questionAswer"
-              rows="3"
-              class="form-control"
-              [(ngModel)]="answer"></textarea>
+          <label for="questionAswer">Question Answer</label>
+          <textarea
+            id="questionAswer"
+            name="questionAswer"
+            rows="3"
+            class="form-control"
+            [(ngModel)]="answer"></textarea>
           <p>Your reply: {{ anwser }}</p>
+        </div>
+        <div class="form-group">
+          <label for="gender">Select a Gender</label>
+          <div id="gender"
+               class="radio"
+               *ngFor="let gender of genders">
+            <label>
+              <input type="radio"
+                     name="gender"
+                     ngModel
+                     [value]="gender"
+                     required>
+              {{ gender }}
+            </label>
+          </div>
         </div>
         <button class="btn btn-primary"
                 type="submit" [disabled]="!f.valid">Submit</button>
